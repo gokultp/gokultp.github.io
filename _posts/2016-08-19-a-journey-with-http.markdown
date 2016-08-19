@@ -126,11 +126,11 @@ Or is it problem with my browser ?
 I have lot of questions in my mind. I have decided to simply analyse how a web browser communicates with server.
 
 
-#### Step1 : browser makes a requests to server.
+### Step1 : browser makes a requests to server.
 
 ![Image of Yaktocat](public/images.jpg)
 
-#### Step2 : server will respond to the request.
+### Step2 : server will respond to the request.
 
 Ohhhh! yeah I could find out the bullshit!!!!
 
@@ -181,4 +181,46 @@ then I had made a few more more changes in our server.
 
 ```
 
-Will it works ? I have checked unfortunately it was also not working.
+Will it works ? I have checked, unfortunately it was also not working.
+
+So what is the problem ?
+
+Got an Idea !!!!!!
+
+Lets check what the browser is sending to server, lets log that buffer content
+
+so I made a small change in our code.
+
+```c
+    /*---- Accept call creates a new socket for the incoming connection ----*/
+    addr_size = sizeof serverStorage;
+    newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
+
+    /*---- Send message to the socket of the incoming connection ----*/
+    recv(newSocket, buffer, 1024, 0);
+    // print the request
+    printf("%s\n", buffer);
+
+    strcat(sendBuff,"Hello World");
+
+    send(newSocket,sendBuff,strlen(sendBuff),0);
+
+    close(newSocket);
+    close(welcomeSocket);
+
+```
+
+Wow!!!!! Its printing something.
+
+```
+    Listening on 7000
+    GET / HTTP/1.1
+    Host: localhost:7000
+    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+    Accept-Language: en-us
+    Connection: keep-alive
+    Accept-Encoding: gzip, deflate
+    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/601.5.17 (KHTML, like Gecko) Version/9.1 Safari/601.5.17
+
+
+```
