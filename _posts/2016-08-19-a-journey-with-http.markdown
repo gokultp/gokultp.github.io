@@ -12,7 +12,7 @@ if(listen(welcomeSocket,5)==0)
    printf("Listening on 7000\n");
 
 ```
-It was a tcp server. I have'nt written any socket programs in C since my college days. But still it looks like very familiar to me. I could recollect where I have used the same kind of code within a fraction of second. It may be familiar for you,  if you are a web developer.
+It was a tcp server. I have'nt written any socket programs in C since my college days. But still it looks like very familiar to me. I could recollect where I have used the same kind of code, within a fraction of second. It may be familiar for you,  if you are a web developer.
 
 If you can't recollect where it have been used, take a look at these code snippets.
 
@@ -125,7 +125,7 @@ Or is it problem with my browser ?
 
 I have lot of questions in my mind. I have decided to simply analyse how a web browser communicates with server.
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of Yaktocat](public/images.jpg)
 
 ## Step1 : browser makes a requests to server.
 
