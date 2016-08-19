@@ -14,7 +14,7 @@ if(listen(welcomeSocket,5)==0)
 ```
 It was a tcp server. I have'nt written any socket programs in C since my college days. But still it looks like very familiar to me. I could recollect where I have used the same kind of code within a fraction of second. It may be familiar for you,  if you are a web developer.
 
-If you cant recollect where it have been used, take a look at these code snippets.
+If you can't recollect where it have been used, take a look at these code snippets.
 
 ```golang
 package main
@@ -33,6 +33,7 @@ func main() {
     http.ListenAndServe(":8080", nil)
 }
 ```
+and one more
 
 ```js
 var express = require('express');
@@ -45,4 +46,63 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
+```
+
+These two are simple http servers. The first one is written in golang and the second is written in node.js. So why that C code snippet caught my attention ? Its because of that function name 'Listen'.
+
+I was aware of that http is an application layer protocol running over tcp. Then I think, our tcp server can communicate with a web browser. I decided to try it out, and my  goal is to send a message to web browser.
+
+```c
+/****************** SERVER CODE ****************/
+
+#include <stdio.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <string.h>
+
+int main(){
+  int welcomeSocket, newSocket;
+  char buffer[1024];
+  struct sockaddr_in serverAddr;
+  struct sockaddr_storage serverStorage;
+  socklen_t addr_size;
+
+  /*---- Create the socket. The three arguments are: ----*/
+  /* 1) Internet domain 2) Stream socket 3) Default protocol (TCP in this case) */
+  welcomeSocket = socket(PF_INET, SOCK_STREAM, 0);
+
+  /*---- Configure settings of the server address struct ----*/
+  /* Address family = Internet */
+  serverAddr.sin_family = AF_INET;
+  /* Set port number, using htons function to use proper byte order */
+  serverAddr.sin_port = htons(7896);
+  /* Set IP address to localhost */
+  serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+  /* Set all bits of the padding field to 0 */
+  memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);
+
+  /*---- Bind the address struct to the socket ----*/
+  bind(welcomeSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr));
+
+  /*---- Listen on the socket, with 5 max connection requests queued ----*/
+  if(listen(welcomeSocket,5)==0)
+    printf("Listening on 7000\n");
+  else
+    printf("Error\n");
+
+  while(1){
+      /*---- Accept call creates a new socket for the incoming connection ----*/
+      addr_size = sizeof serverStorage;
+      newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
+
+      /*---- Send message to the socket of the incoming connection ----*/
+      buffer = "Hello World"
+
+      send(newSocket,buffer,strlen(buffer),0);
+  }
+
+  close(newSocket);
+  return 0;
+}
+
 ```
