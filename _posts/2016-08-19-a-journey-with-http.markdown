@@ -125,3 +125,24 @@ I have lot of questions in my mind. I have decided to simply analyse how a web b
 #Step1 : browser makes a requests to server.
 
 #Step2 : server will respond to the request.
+
+Ohhhh! yeah I could find out the bullshit!!!!
+
+Actually what is happening here, the web browser is sending a request. So first our server needs to be receive it. But here the server is not trying to receive anything but trying to send some data.
+
+see the code
+
+```c
+    addr_size = sizeof serverStorage;
+    newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
+
+    /*---- Send message to the socket of the incoming connection ----*/
+    buffer = "Hello World"
+
+    send(newSocket,buffer,strlen(buffer),0);
+
+
+    close(newSocket);  
+    close(welcomeSocket);
+
+```
