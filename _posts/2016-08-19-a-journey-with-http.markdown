@@ -131,7 +131,7 @@ I have lot of questions in my mind. I have decided to simply analyse how a web b
 
 Ohhhh! yeah I could find out the bullshit!!!!
 
-Actually what is happening here, the web browser is sending a request. So first our server needs to be receive it. But here the server is not trying to receive anything but trying to send some data.
+Actually what is happening here, the web browser is sending a request. So first our server needs to be receive it,  here the server is not trying to receive anything but trying to send some data. So thats the problem !!
 
 see the code
 
@@ -146,6 +146,34 @@ see the code
 
 
     close(newSocket);  
+    close(welcomeSocket);
+
+```
+
+So we have to rewrite it as receive the request first then send the response.
+
+So Let's try.
+
+I have introduced a new buffer for sending response.
+
+```c
+char sendBuff[2048] ="";
+```
+
+then I had made a few more more changes in our server.
+
+```c
+    /*---- Accept call creates a new socket for the incoming connection ----*/
+    addr_size = sizeof serverStorage;
+    newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
+
+    /*---- Send message to the socket of the incoming connection ----*/
+    recv(newSocket, buffer, 1024, 0);
+    strcat(sendBuff,"Hello World");
+
+    send(newSocket,sendBuff,strlen(sendBuff),0);
+
+    close(newSocket);
     close(welcomeSocket);
 
 ```
