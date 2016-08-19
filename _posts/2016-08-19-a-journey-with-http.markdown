@@ -125,9 +125,9 @@ Or is it problem with my browser ?
 
 I have lot of questions in my mind. I have decided to simply analyse how a web browser communicates with server.
 
-#Step1 : browser makes a requests to server.
+# Step1 : browser makes a requests to server.
 
-#Step2 : server will respond to the request.
+# Step2 : server will respond to the request.
 
 Ohhhh! yeah I could find out the bullshit!!!!
 
@@ -177,3 +177,5 @@ then I had made a few more more changes in our server.
     close(welcomeSocket);
 
 ```
+
+Will it works ? I have checked unfortunately it was also not working.
