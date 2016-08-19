@@ -113,3 +113,15 @@ int main(){
 
 This was my tcp server code. I had run it and tried to connect with my browser, by providing url as localhost:7000.
 But unfortunately nothing was happened. I have tried it for few times but still no result :(.  One thing I noticed is our server was stopping execution when I have tried to connect with browser. So something is happening there. I have tried to debug the code, but I could'nt find any errors,then I have connected a tcp client to the server and It was working perfectly.
+
+So why it is not connecting with my browser ?
+
+Is there anything wrong with my assumption ?
+
+Or is it problem with my browser ?
+
+I have lot of questions in my mind. I have decided to simply analyse how a web browser communicates with server.
+
+#Step1 : browser makes a requests to server.
+
+#Step2 : server will respond to the request.
