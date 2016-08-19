@@ -213,14 +213,14 @@ so I made a small change in our code.
 Wow!!!!! Its printing something.
 
 ```
-    Listening on 7000
-    GET / HTTP/1.1
-    Host: localhost:7000
-    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-    Accept-Language: en-us
-    Connection: keep-alive
-    Accept-Encoding: gzip, deflate
-    User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/601.5.17 (KHTML, like Gecko) Version/9.1 Safari/601.5.17
+Listening on 7000
+GET / HTTP/1.1
+Host: localhost:7000
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us
+Connection: keep-alive
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_4) AppleWebKit/601.5.17 (KHTML, like Gecko) Version/9.1 Safari/601.5.17
 
 
 ```
