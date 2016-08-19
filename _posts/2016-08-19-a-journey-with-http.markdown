@@ -75,7 +75,7 @@ int main(){
   /* Address family = Internet */
   serverAddr.sin_family = AF_INET;
   /* Set port number, using htons function to use proper byte order */
-  serverAddr.sin_port = htons(7896);
+  serverAddr.sin_port = htons(7000);
   /* Set IP address to localhost */
   serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
   /* Set all bits of the padding field to 0 */
@@ -90,19 +90,26 @@ int main(){
   else
     printf("Error\n");
 
-  while(1){
-      /*---- Accept call creates a new socket for the incoming connection ----*/
-      addr_size = sizeof serverStorage;
-      newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
 
-      /*---- Send message to the socket of the incoming connection ----*/
-      buffer = "Hello World"
+  /*---- Accept call creates a new socket for the incoming connection ----*/
+  addr_size = sizeof serverStorage;
+  newSocket = accept(welcomeSocket, (struct sockaddr *) &serverStorage, &addr_size);
 
-      send(newSocket,buffer,strlen(buffer),0);
-  }
+  /*---- Send message to the socket of the incoming connection ----*/
+  buffer = "Hello World"
 
-  close(newSocket);
+  send(newSocket,buffer,strlen(buffer),0);
+
+
+  close(newSocket);  
+  close(welcomeSocket);
+
   return 0;
 }
 
+
 ```
+
+
+This was my tcp server code. I had run it and tried to connect with my browser, by providing url as localhost:7000.
+But unfortunately nothing was happened. I have tried it few times but no result.
