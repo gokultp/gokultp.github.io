@@ -112,4 +112,4 @@ int main(){
 
 
 This was my tcp server code. I had run it and tried to connect with my browser, by providing url as localhost:7000.
-But unfortunately nothing was happened. I have tried it few times but no result.
+But unfortunately nothing was happened. I have tried it for few times but still no result :tired_face:. 
