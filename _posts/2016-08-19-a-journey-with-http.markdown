@@ -111,8 +111,11 @@ int main(){
 ```
 
 
-This was my tcp server code. I had run it and tried to connect with my browser, by providing url as localhost:7000.
-But unfortunately nothing was happened. I have tried it for few times but still no result :(.  One thing I noticed is our server was stopping execution when I have tried to connect with browser. So something is happening there. I have tried to debug the code, but I could'nt find any errors,then I have connected a tcp client to the server and It was working perfectly.
+This was our tcp server code. I had run it and tried to connect with my browser, by providing url as localhost:7000.
+But unfortunately nothing was happened.
+I have tried it again for few more times but still, there was no result :(.  
+
+One thing I have noticed is our server was stopping  while we are connecting to browser. So something is happening there. I have tried to debug the code, but I could'nt find any errors,then I have tried to connect  a tcp client to the server and It was working perfectly.
 
 So why it is not connecting with my browser ?
 
