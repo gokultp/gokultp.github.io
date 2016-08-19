@@ -1,0 +1,8 @@
+excerpt_separator: ""
+pygments: true
+markdown: kramdown
+url: http://gokultp.github.io
+title: Gokul T P
+tagline: A log of everyday life
+description: My World
+paginate: 5
