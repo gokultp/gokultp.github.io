@@ -48,9 +48,9 @@ app.listen(3000, function () {
 });
 ```
 
-These two are simple http servers. The first one is written in golang and the second is written in node.js. So why that C code snippet caught my attention ? Its because of that function name 'Listen'.
+These two are simple http servers. The first one was written in golang and the second was written in node.js. So why that C code snippet caught my attention ? Its because of that function name 'Listen'.
 
-I was aware of that http is an application layer protocol running over tcp. Then I think, our tcp server can communicate with a web browser. I decided to try it out, and my  goal is to send a message to web browser.
+I was aware of that http is an application layer protocol running over tcp. Then I think, our tcp server can communicate with a web browser. I decided to try it out, and my  goal was to send a message to web browser.
 
 ```c
 /****************** SERVER CODE ****************/

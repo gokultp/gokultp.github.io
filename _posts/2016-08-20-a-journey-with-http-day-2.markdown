@@ -62,6 +62,6 @@ but still, we can see some similarity in their formatting.
 
 Why they are formatted similarly ?
 
-I think both of them are http headers.
+I think its because, both of them are http headers.
 
-So why their content is different ?
+So why their contents are different ?
