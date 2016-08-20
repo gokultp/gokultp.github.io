@@ -213,7 +213,6 @@ so I made a small change in our code.
 Wow!!!!! Its printing something.
 
 ```
-Listening on 7000
 GET / HTTP/1.1
 Host: localhost:7000
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8

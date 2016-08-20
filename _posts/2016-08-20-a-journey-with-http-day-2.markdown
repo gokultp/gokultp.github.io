@@ -48,4 +48,13 @@ So lets try a header request using curl.
 $curl -I google.com
 ```
 
-Yeah got a result, but not the same
+Yeah got a result, but not the same as the log in our server.
+
+```
+HTTP/1.1 302 Found
+Cache-Control: private
+Content-Type: text/html; charset=UTF-8
+Location: http://www.google.co.in/?gfe_rd=cr&ei=7723V525B7Lv8wfY0I6ADA
+Content-Length: 261
+Date: Sat, 20 Aug 2016 02:18:23 GMT
+```
