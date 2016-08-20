@@ -6,7 +6,6 @@ layout: post
 Yesterday we could log the message sent by browser.
 
 ```
-Listening on 7000
 GET / HTTP/1.1
 Host: localhost:7000
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -58,3 +57,11 @@ Location: http://www.google.co.in/?gfe_rd=cr&ei=7723V525B7Lv8wfY0I6ADA
 Content-Length: 261
 Date: Sat, 20 Aug 2016 02:18:23 GMT
 ```
+
+but still, we can see some similarity in their formatting.
+
+Why they are formatted similarly ?
+
+I think both of them are http headers.
+
+So why their content is different ?
