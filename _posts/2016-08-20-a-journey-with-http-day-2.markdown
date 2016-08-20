@@ -47,3 +47,5 @@ So lets try a header request using curl.
 ```sh
 $curl -I google.com
 ```
+
+Yeah got a result, but not the same
