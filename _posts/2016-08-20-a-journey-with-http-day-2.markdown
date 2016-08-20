@@ -23,27 +23,27 @@ This message content is very familiar to me. It looks like a http header.
 Lets check it out, open terminal and make a request to google.com
 
 ```sh
-	$curl google.com
+$curl google.com
 ```
 
 Ohh its returning an html content.
 
 ```html
-	<HTML>
-		<HEAD>
-			<meta http-equiv="content-type" content="text/html;charset=utf-8">
-			<TITLE>302 Moved</TITLE>
-		</HEAD>
-		<BODY>
-			<H1>302 Moved</H1>
-			The document has moved
-			<A HREF="http://www.google.co.in/?gfe_rd=cr&amp;ei=c7u3V-3VI-rI8AeVj4GACg">here</A>.
-		</BODY>
-	</HTML>
+<HTML>
+	<HEAD>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<TITLE>302 Moved</TITLE>
+	</HEAD>
+	<BODY>
+		<H1>302 Moved</H1>
+		The document has moved
+		<A HREF="http://www.google.co.in/?gfe_rd=cr&amp;ei=c7u3V-3VI-rI8AeVj4GACg">here</A>.
+	</BODY>
+</HTML>
 ```
 
 So lets try a header request using curl.
 
 ```sh
-	$curl -I google.com
+$curl -I google.com
 ```
